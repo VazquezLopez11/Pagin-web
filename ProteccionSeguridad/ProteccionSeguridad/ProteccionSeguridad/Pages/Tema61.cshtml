@@ -1,0 +1,211 @@
+﻿@page
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>6.1 Concepto y objetivos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+    body{
+        background:#f5f5f5;
+        color:#222222;
+        font-family:Arial,sans-serif
+    }
+
+    .navbar,
+    footer{
+        background:#111111;
+        color:white
+    }
+
+    .navbar-brand,
+    .nav-link{
+        color:white!important
+    }
+
+    .nav-link:hover{
+        color:#d0d0d0!important
+    }
+
+    .hero{
+        background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(50,50,50,.65)
+        ),
+        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=85')
+        center/cover;
+        color:white;
+        padding:85px 0
+    }
+
+    .contenido{
+        background:white;
+        padding:35px;
+        border-radius:16px;
+        box-shadow:0 8px 25px rgba(0,0,0,.10);
+        margin-top:-30px;
+        position:relative
+    }
+
+    h2{
+        color:#111111;
+        font-weight:700;
+        margin-top:30px
+    }
+
+    .imagen{
+        width:100%;
+        height:300px;
+        object-fit:cover;
+        border-radius:13px
+    }
+
+    .dato{
+        background:#efefef;
+        border-left:4px solid #555555;
+        padding:18px;
+        border-radius:8px;
+        margin:15px 0
+    }
+
+    .tarjeta{
+        background:#fafafa;
+        border:1px solid #d8d8d8;
+        border-radius:12px;
+        padding:22px;
+        height:100%
+    }
+
+    .icono{
+        font-size:30px;
+        color:#333333
+    }
+
+    .tarjeta:hover{
+        box-shadow:0 10px 25px rgba(0,0,0,.12);
+        transition:.3s
+    }
+
+    footer{
+        padding:30px 0;
+        margin-top:55px
+    }
+
+    footer a{
+        color:#ffffff;
+        text-decoration:none
+    }
+
+    footer a:hover{
+        color:#cccccc
+    }
+
+    .btn-primary,
+.btn-primary:focus,
+.btn-primary:active{
+    background-color:#111111 !important;
+    border-color:#111111 !important;
+    color:#ffffff !important;
+}
+
+.btn-primary:hover{
+    background-color:#333333 !important;
+    border-color:#333333 !important;
+    color:#ffffff !important;
+}
+
+.btn-outline-primary,
+.btn-outline-primary:focus,
+.btn-outline-primary:active{
+    background-color:#ffffff !important;
+    border-color:#111111 !important;
+    color:#111111 !important;
+}
+
+.btn-outline-primary:hover{
+    background-color:#111111 !important;
+    border-color:#111111 !important;
+    color:#ffffff !important;
+}
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+    <a class="navbar-brand fw-bold" href="/">PROTECCIÓN Y SEGURIDAD</a>
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Contenido</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Tema61">6.1 Concepto y objetivos</a></li>
+                <li><a class="dropdown-item" href="/Tema62">6.2 Clasificación</a></li>
+                <li><a class="dropdown-item" href="/Tema63">6.3 Funciones</a></li>
+                <li><a class="dropdown-item" href="/Tema64">6.4 Matrices de acceso</a></li>
+                <li><a class="dropdown-item" href="/Tema65">6.5 Protección basada en lenguaje</a></li>
+                <li><a class="dropdown-item" href="/Tema66">6.6 Validación y amenazas</a></li>
+                <li><a class="dropdown-item" href="/Tema67">6.7 Cifrado</a></li>
+            </ul>
+        </li>
+    </ul></div>
+    </div>
+</nav>
+
+<header class="hero"><div class="container">
+    <span style=" color:white;" class="fw-bold">
+    UNIDAD 3 · TEMA 6.1
+    </span>
+    <h1 class="display-4 fw-bold mt-2">Concepto y objetivos de protección y seguridad</h1>
+    <p class="fs-5 mt-3">Principios fundamentales para mantener seguros los recursos y la información de un sistema operativo.</p>
+</div></header>
+
+<main class="container contenido">
+    <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+            <h2 class="mt-0">¿Qué es la protección?</h2>
+            <p>La protección de un sistema operativo consiste en establecer controles que regulan la manera en que los usuarios y los programas pueden utilizar los recursos de una computadora. Estos recursos incluyen archivos, memoria, procesadores, dispositivos y procesos.</p>
+            <p>Su finalidad es evitar que una persona o programa realice acciones para las que no tiene autorización. Por ejemplo, un usuario puede tener permiso para consultar un documento, pero no necesariamente para modificarlo o eliminarlo.</p>
+        </div>
+        <div class="col-lg-5">
+            <img class="imagen" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Protección de información digital">
+        </div>
+    </div>
+
+    <h2>¿Qué es la seguridad?</h2>
+    <p>La seguridad informática comprende las medidas, políticas y herramientas que se utilizan para proteger los sistemas y sus datos frente a amenazas. Busca reducir los riesgos que pueden afectar el funcionamiento de los equipos, la privacidad de los usuarios y la disponibilidad de la información.</p>
+
+    <div class="dato">
+        <strong>Diferencia principal:</strong> la protección se enfoca en controlar los permisos y el acceso a los recursos; la seguridad contempla un conjunto más amplio de medidas para prevenir, detectar y responder ante riesgos.
+    </div>
+
+    <h2>Objetivos principales</h2>
+    <div class="row g-3 mt-2">
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-eye-slash icono"></i><h5>Confidencialidad</h5><p>Evitar que personas no autorizadas puedan consultar información privada.</p></div></div>
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-shield-check icono"></i><h5>Integridad</h5><p>Conservar los datos correctos y evitar modificaciones no autorizadas.</p></div></div>
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-clock-history icono"></i><h5>Disponibilidad</h5><p>Permitir que los usuarios autorizados utilicen los recursos cuando los necesiten.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-person-check icono"></i><h5>Autenticación</h5><p>Comprobar la identidad de los usuarios antes de permitirles ingresar.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-key icono"></i><h5>Control de acceso</h5><p>Definir qué recursos puede consultar o modificar cada usuario.</p></div></div>
+    </div>
+
+    <h2>Importancia en los sistemas operativos</h2>
+    <p>Un sistema operativo administra muchos recursos al mismo tiempo. Sin mecanismos de protección, cualquier programa podría intentar modificar archivos ajenos, acceder a información privada o interferir con otros procesos. Por eso, los controles de seguridad ayudan a mantener un funcionamiento estable y confiable.</p>
+
+    <h2>Ejemplo práctico</h2>
+    <p>En una computadora escolar, un estudiante puede tener permiso para abrir sus documentos, mientras que el administrador puede instalar programas y modificar configuraciones. Esta diferencia de permisos es una forma de protección que limita las acciones de cada usuario.</p>
+
+    <div class="d-flex justify-content-between mt-5">
+        <a href="/" class="btn btn-outline-primary">← Inicio</a>
+        <a href="/Tema62" class="btn btn-primary">Siguiente tema →</a>
+    </div>
+</main>
+<footer><div class="container text-center">
+    <p class="mb-1">Protección y Seguridad | Sistemas Operativos</p>
+    <p class="small mb-0">Referencias: Tanenbaum y Bos, Sistemas operativos modernos; Stallings, Sistemas operativos: aspectos internos y principios de diseño; NIST, <a href="https://csrc.nist.gov/" target="_blank">Computer Security Resource Center</a>.</p>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

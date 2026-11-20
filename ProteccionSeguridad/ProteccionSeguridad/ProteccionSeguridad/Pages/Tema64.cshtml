@@ -1,0 +1,226 @@
+﻿
+@page
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>6.4 Matrices de acceso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+    body{
+        background:#f5f5f5;
+        color:#222222;
+        font-family:Arial,sans-serif
+    }
+
+    .navbar,
+    footer{
+        background:#111111;
+        color:white
+    }
+
+    .navbar-brand,
+    .nav-link{
+        color:white!important
+    }
+
+    .nav-link:hover{
+        color:#d0d0d0!important
+    }
+
+    .hero{
+        background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(50,50,50,.65)
+        ),
+        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=85')
+        center/cover;
+        color:white;
+        padding:85px 0
+    }
+
+    .contenido{
+        background:white;
+        padding:35px;
+        border-radius:16px;
+        box-shadow:0 8px 25px rgba(0,0,0,.10);
+        margin-top:-30px;
+        position:relative
+    }
+
+    h2{
+        color:#111111;
+        font-weight:700;
+        margin-top:30px
+    }
+
+    .tarjeta{
+        background:#fafafa;
+        border:1px solid #d8d8d8;
+        border-radius:12px;
+        padding:22px;
+        height:100%;
+        transition:.3s
+    }
+
+    .tarjeta:hover{
+        box-shadow:0 10px 25px rgba(0,0,0,.12)
+    }
+
+    .icono{
+        font-size:30px;
+        color:#333333
+    }
+
+    .dato{
+        background:#efefef;
+        border-left:4px solid #555555;
+        padding:18px;
+        border-radius:8px;
+        margin:18px 0
+    }
+
+    /* Botones Bootstrap */
+
+    .btn{
+        transition:.3s;
+        padding:10px 22px;
+        border-radius:8px;
+    }
+
+    .btn-primary,
+    .btn-primary:focus,
+    .btn-primary:active{
+        background-color:#111111 !important;
+        border-color:#111111 !important;
+        color:#ffffff !important;
+    }
+
+    .btn-primary:hover{
+        background-color:#333333 !important;
+        border-color:#333333 !important;
+        color:#ffffff !important;
+    }
+
+    .btn-outline-primary,
+    .btn-outline-primary:focus,
+    .btn-outline-primary:active{
+        background-color:#ffffff !important;
+        border-color:#111111 !important;
+        color:#111111 !important;
+    }
+
+    .btn-outline-primary:hover{
+        background-color:#111111 !important;
+        border-color:#111111 !important;
+        color:#ffffff !important;
+    }
+
+
+    .text-info{
+        color:#555555 !important;
+    }
+
+    footer{
+        padding:30px 0;
+        margin-top:55px
+    }
+
+    footer a{
+        color:#ffffff;
+        text-decoration:none
+    }
+
+    footer a:hover{
+        color:#d0d0d0
+    }
+
+    .table-primary,
+.table-primary th{
+    background-color:#222222 !important;
+    color:#ffffff !important;
+    border-color:#444444 !important;
+    font-weight:600;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top"><div class="container">
+    <a class="navbar-brand fw-bold" href="/">PROTECCIÓN Y SEGURIDAD</a>
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Contenido</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Tema61">6.1 Concepto y objetivos</a></li><li><a class="dropdown-item" href="/Tema62">6.2 Clasificación</a></li><li><a class="dropdown-item" href="/Tema63">6.3 Funciones</a></li><li><a class="dropdown-item" href="/Tema64">6.4 Matrices de acceso</a></li><li><a class="dropdown-item" href="/Tema65">6.5 Protección basada en lenguaje</a></li><li><a class="dropdown-item" href="/Tema66">6.6 Validación y amenazas</a></li><li><a class="dropdown-item" href="/Tema67">6.7 Cifrado</a></li>
+            </ul>
+        </li>
+    </ul></div>
+</div></nav>
+
+<header class="hero"><div class="container">
+    <span style=" color:white;" class="fw-bold">
+    UNIDAD 3 · TEMA 6.4
+    </span>
+    <h1 class="display-4 fw-bold mt-2">Implementación de matrices de acceso</h1>
+    <p class="fs-5 mt-3">Una forma de organizar y representar los permisos de los usuarios sobre los recursos del sistema.</p>
+</div></header>
+
+<main class="container contenido">
+    <h2 class="mt-0">¿Qué es una matriz de acceso?</h2>
+    <p>Una matriz de acceso es un modelo que representa los permisos que tienen los usuarios o procesos sobre los diferentes recursos de un sistema. Su función es indicar qué operaciones puede realizar cada usuario sobre un objeto, como leer un archivo, modificarlo o ejecutarlo.</p>
+
+    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=85" class="img-fluid rounded-4 mb-3" alt="Información y programación">
+
+    <h2>Elementos de la matriz</h2>
+    <div class="row g-3">
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-person icono"></i><h5>Usuarios o dominios</h5><p>Se colocan en las filas y representan quién solicita utilizar un recurso.</p></div></div>
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-folder icono"></i><h5>Objetos</h5><p>Se colocan en las columnas y representan archivos, carpetas, dispositivos o procesos.</p></div></div>
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-unlock icono"></i><h5>Permisos</h5><p>Se encuentran en las celdas e indican qué operaciones están autorizadas.</p></div></div>
+    </div>
+
+    <h2>Ejemplo de una matriz de acceso</h2>
+    <p>La siguiente tabla muestra cómo podrían organizarse los permisos en una computadora escolar:</p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center align-middle">
+            <thead class="table-primary">
+                <tr><th>Usuario</th><th>Archivo A</th><th>Archivo B</th><th>Impresora</th></tr>
+            </thead>
+            <tbody>
+                <tr><th>Administrador</th><td>Leer y escribir</td><td>Leer y escribir</td><td>Utilizar</td></tr>
+                <tr><th>Estudiante 1</th><td>Leer</td><td>Sin acceso</td><td>Utilizar</td></tr>
+                <tr><th>Estudiante 2</th><td>Leer y escribir</td><td>Leer</td><td>Sin acceso</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="dato"><strong>¿Cómo se interpreta?</strong><br>El estudiante 1 puede consultar el Archivo A y utilizar la impresora, pero no puede acceder al Archivo B. El administrador tiene más permisos sobre los recursos.</div>
+
+    <h2>Formas de implementación</h2>
+    <div class="row g-3">
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-list-check icono"></i><h5>Listas de control de acceso (ACL)</h5><p>Se asocia a cada objeto una lista que indica qué usuarios pueden acceder y qué permisos tienen. Por ejemplo, un archivo puede tener una lista de usuarios autorizados para leerlo o modificarlo.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-person-lock icono"></i><h5>Listas de capacidades</h5><p>Se asocia a cada usuario o proceso una lista de objetos a los que puede acceder y las operaciones que puede realizar sobre ellos.</p></div></div>
+    </div>
+
+    <h2>Ventajas y utilidad</h2>
+    <ul>
+        <li>Organiza los permisos de manera clara.</li>
+        <li>Ayuda a evitar accesos no autorizados.</li>
+        <li>Permite asignar diferentes niveles de acceso.</li>
+        <li>Facilita la administración de archivos y otros recursos.</li>
+    </ul>
+
+    <div class="d-flex justify-content-between mt-5">
+        <a href="/Tema63" class="btn btn-outline-primary">← Tema anterior</a>
+        <a href="/Tema65" class="btn btn-primary">Siguiente tema →</a>
+    </div>
+</main>
+<footer><div class="container text-center">
+    <p class="mb-1">Protección y Seguridad | Sistemas Operativos</p>
+    <p class="small mb-0">Referencias: Tanenbaum y Bos, Sistemas operativos modernos; Stallings, Sistemas operativos; NIST, <a href="https://csrc.nist.gov/" target="_blank">Computer Security Resource Center</a>.</p>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

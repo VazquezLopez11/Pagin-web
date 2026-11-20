@@ -1,0 +1,258 @@
+﻿
+@page
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>6.7 Cifrado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+   <style>
+    body{
+        background:#f5f5f5;
+        color:#222222;
+        font-family:Arial,sans-serif
+    }
+
+    .navbar,
+    footer{
+        background:#111111;
+        color:white
+    }
+
+    .navbar-brand,
+    .nav-link{
+        color:white!important
+    }
+
+    .nav-link:hover{
+        color:#d0d0d0!important
+    }
+
+    .hero{
+        background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(50,50,50,.65)
+        ),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=85')
+        center/cover;
+        color:white;
+        padding:85px 0
+    }
+
+    .contenido{
+        background:white;
+        padding:35px;
+        border-radius:16px;
+        box-shadow:0 8px 25px rgba(0,0,0,.10);
+        margin-top:-30px;
+        position:relative
+    }
+
+    h2{
+        color:#111111;
+        font-weight:700;
+        margin-top:30px
+    }
+
+    .tarjeta{
+        background:#fafafa;
+        border:1px solid #d8d8d8;
+        border-radius:12px;
+        padding:22px;
+        height:100%;
+        transition:.3s
+    }
+
+    .tarjeta:hover{
+        box-shadow:0 10px 25px rgba(0,0,0,.12)
+    }
+
+    .icono{
+        font-size:30px;
+        color:#333333
+    }
+
+    .dato{
+        background:#efefef;
+        border-left:4px solid #555555;
+        padding:18px;
+        border-radius:8px;
+        margin:18px 0
+    }
+
+    .imagen{
+        width:100%;
+        height:300px;
+        object-fit:cover;
+        border-radius:13px
+    }
+
+    /* Botones */
+
+    .btn{
+        transition:.3s;
+        padding:10px 22px;
+        border-radius:8px;
+    }
+
+    .btn-primary,
+    .btn-primary:focus,
+    .btn-primary:active{
+        background-color:#111111 !important;
+        border-color:#111111 !important;
+        color:#ffffff !important;
+    }
+
+    .btn-primary:hover{
+        background-color:#333333 !important;
+        border-color:#333333 !important;
+        color:#ffffff !important;
+    }
+
+    .btn-outline-primary,
+    .btn-outline-primary:focus,
+    .btn-outline-primary:active{
+        background-color:#ffffff !important;
+        border-color:#111111 !important;
+        color:#111111 !important;
+    }
+
+    .btn-outline-primary:hover{
+        background-color:#111111 !important;
+        border-color:#111111 !important;
+        color:#ffffff !important;
+    }
+
+    /* Reemplaza azules de Bootstrap */
+
+    .text-info{
+        color:#555555 !important;
+    }
+
+    footer{
+        padding:30px 0;
+        margin-top:55px
+    }
+
+    footer a{
+        color:#ffffff;
+        text-decoration:none
+    }
+
+    footer a:hover{
+        color:#d0d0d0
+    }
+    .table-primary,
+.table-primary th{
+    background-color:#222222 !important;
+    color:#ffffff !important;
+    border-color:#444444 !important;
+    font-weight:600;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top"><div class="container">
+    <a class="navbar-brand fw-bold" href="/">PROTECCIÓN Y SEGURIDAD</a>
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Contenido</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Tema61">6.1 Concepto y objetivos</a></li><li><a class="dropdown-item" href="/Tema62">6.2 Clasificación</a></li><li><a class="dropdown-item" href="/Tema63">6.3 Funciones</a></li><li><a class="dropdown-item" href="/Tema64">6.4 Matrices de acceso</a></li><li><a class="dropdown-item" href="/Tema65">6.5 Protección basada en lenguaje</a></li><li><a class="dropdown-item" href="/Tema66">6.6 Validación y amenazas</a></li><li><a class="dropdown-item" href="/Tema67">6.7 Cifrado</a></li>
+            </ul>
+        </li>
+    </ul></div>
+</div></nav>
+
+<header class="hero"><div class="container">
+    <span style=" color:white;" class="fw-bold">
+    UNIDAD 3 · TEMA 6.7
+    </span>
+    <h1 class="display-4 fw-bold mt-2">Cifrado</h1>
+    <p class="fs-5 mt-3">Una herramienta fundamental para proteger la confidencialidad de la información digital.</p>
+</div></header>
+
+<main class="container contenido">
+    <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+            <h2 class="mt-0">¿Qué es el cifrado?</h2>
+            <p>El cifrado es un proceso que transforma información legible en un formato que no puede interpretarse fácilmente sin la clave correspondiente. Se utiliza para proteger los datos y evitar que personas no autorizadas puedan comprender su contenido.</p>
+            <p>La información original se conoce como texto plano y el resultado del proceso se conoce como texto cifrado. Para recuperar los datos originales se utiliza un proceso llamado descifrado.</p>
+        </div>
+        <div class="col-lg-5">
+            <img class="imagen" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85" alt="Tecnología y seguridad digital">
+        </div>
+    </div>
+
+    <h2>¿Cómo funciona?</h2>
+    <div class="row g-3 text-center mt-2">
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-file-text icono"></i><h5>1. Texto original</h5><p>Se tiene información que puede ser leída normalmente.</p></div></div>
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-lock icono"></i><h5>2. Cifrado</h5><p>Un algoritmo y una clave transforman los datos.</p></div></div>
+        <div class="col-md-4"><div class="tarjeta"><i class="bi bi-file-lock icono"></i><h5>3. Texto cifrado</h5><p>La información queda protegida y no se entiende sin la clave adecuada.</p></div></div>
+    </div>
+
+    <h2>Tipos de cifrado</h2>
+    <div class="row g-4 mt-2">
+        <div class="col-md-6">
+            <div class="tarjeta">
+                <i class="bi bi-key-fill icono"></i>
+                <h3 class="h5 mt-3">Cifrado simétrico</h3>
+                <p>Utiliza una misma clave para cifrar y descifrar la información. Por eso, las personas que necesitan intercambiar datos deben proteger y compartir esa clave de manera segura.</p>
+                <strong>Ejemplo:</strong>
+                <p class="mb-0">AES es un algoritmo de cifrado simétrico utilizado para proteger información digital.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="tarjeta">
+                <i class="bi bi-key icono"></i>
+                <h3 class="h5 mt-3">Cifrado asimétrico</h3>
+                <p>Utiliza un par de claves relacionadas: una clave pública y una clave privada. La clave pública puede compartirse, mientras que la privada debe mantenerse protegida.</p>
+                <strong>Ejemplo:</strong>
+                <p class="mb-0">RSA es un algoritmo de criptografía asimétrica utilizado en diferentes aplicaciones de seguridad.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Comparación de los tipos de cifrado</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-primary"><tr><th>Característica</th><th>Simétrico</th><th>Asimétrico</th></tr></thead>
+            <tbody>
+                <tr><th>Claves utilizadas</th><td>Una clave compartida</td><td>Una clave pública y una privada</td></tr>
+                <tr><th>Velocidad</th><td>Generalmente más rápido</td><td>Generalmente más lento</td></tr>
+                <tr><th>Distribución de claves</th><td>Se debe compartir la clave de forma segura</td><td>La clave pública puede distribuirse</td></tr>
+                <tr><th>Ejemplos</th><td>AES</td><td>RSA</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Aplicaciones del cifrado</h2>
+    <ul>
+        <li>Proteger archivos y documentos personales.</li>
+        <li>Evitar que terceros puedan leer información transmitida por internet.</li>
+        <li>Proteger datos almacenados en dispositivos.</li>
+        <li>Ayudar a mantener la privacidad de las comunicaciones.</li>
+        <li>Proteger información utilizada en servicios bancarios y plataformas digitales.</li>
+    </ul>
+
+    <h2>Importancia en los sistemas operativos</h2>
+    <p>Los sistemas operativos pueden utilizar mecanismos de cifrado para proteger archivos, discos y comunicaciones. Esto permite que, incluso si alguien obtiene acceso a los datos almacenados, no pueda interpretarlos fácilmente sin contar con las claves necesarias.</p>
+
+    <div class="dato">El cifrado ayuda a mantener la confidencialidad de la información, pero debe utilizarse junto con contraseñas seguras, permisos adecuados y otras medidas de protección.</div>
+
+    <div class="d-flex justify-content-between mt-5">
+        <a href="/Tema66" class="btn btn-outline-primary">← Tema anterior</a>
+        <a href="/" class="btn btn-primary">Volver al inicio</a>
+    </div>
+</main>
+<footer><div class="container text-center">
+    <p class="mb-1">Protección y Seguridad | Sistemas Operativos</p>
+    <p class="small mb-0">Referencias: Stallings, Sistemas operativos; Tanenbaum y Bos, Sistemas operativos modernos; NIST, <a href="https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines" target="_blank">Cryptographic Standards and Guidelines</a>.</p>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

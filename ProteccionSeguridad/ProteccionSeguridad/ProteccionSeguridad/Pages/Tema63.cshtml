@@ -1,0 +1,211 @@
+﻿@page
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>6.3 Funciones de protección</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+   <style>
+    body{
+        background:#f5f5f5;
+        color:#222222;
+        font-family:Arial,sans-serif
+    }
+
+    .navbar,
+    footer{
+        background:#111111;
+        color:white
+    }
+
+    .navbar-brand,
+    .nav-link{
+        color:white!important
+    }
+
+    .nav-link:hover{
+        color:#d0d0d0!important
+    }
+
+    .hero{
+        background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(50,50,50,.65)
+        ),
+        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85')
+        center/cover;
+        color:white;
+        padding:85px 0
+    }
+
+    .contenido{
+        background:white;
+        padding:35px;
+        border-radius:16px;
+        box-shadow:0 8px 25px rgba(0,0,0,.10);
+        margin-top:-30px;
+        position:relative
+    }
+
+    h2{
+        color:#111111;
+        font-weight:700;
+        margin-top:30px
+    }
+
+    .tarjeta{
+        background:#fafafa;
+        border:1px solid #d8d8d8;
+        border-radius:12px;
+        padding:22px;
+        height:100%;
+        transition:.3s
+    }
+
+    .tarjeta:hover{
+        box-shadow:0 10px 25px rgba(0,0,0,.12)
+    }
+
+    .icono{
+        font-size:30px;
+        color:#333333
+    }
+
+    .paso{
+        background:#efefef;
+        border-left:4px solid #555555;
+        border-radius:12px;
+        padding:22px;
+        height:100%
+    }
+
+    .btn{
+        transition:.3s;
+        padding:10px 22px;
+        border-radius:8px;
+    }
+
+    .btn-primary,
+    .btn-primary:focus,
+    .btn-primary:active{
+        background-color:#111111 !important;
+        border-color:#111111 !important;
+        color:#ffffff !important;
+    }
+
+    .btn-primary:hover{
+        background-color:#333333 !important;
+        border-color:#333333 !important;
+        color:#ffffff !important;
+    }
+
+    .btn-outline-primary,
+    .btn-outline-primary:focus,
+    .btn-outline-primary:active{
+        background-color:#ffffff !important;
+        border-color:#111111 !important;
+        color:#111111 !important;
+    }
+
+    .btn-outline-primary:hover{
+        background-color:#111111 !important;
+        border-color:#111111 !important;
+        color:#ffffff !important;
+    }
+
+    .text-info{
+        color:#555555 !important;
+    }
+
+    footer{
+        padding:30px 0;
+        margin-top:55px
+    }
+
+    footer a{
+        color:#ffffff;
+        text-decoration:none
+    }
+
+    footer a:hover{
+        color:#d0d0d0
+    }
+
+    .alert-primary{
+    background:#efefef !important;
+    border:0 !important;
+    border-left:4px solid #555555 !important;
+    color:#222222 !important;
+    border-radius:8px !important;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top"><div class="container">
+    <a class="navbar-brand fw-bold" href="/">PROTECCIÓN Y SEGURIDAD</a>
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto">
+
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Contenido</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Tema61">6.1 Concepto y objetivos</a></li><li><a class="dropdown-item" href="/Tema62">6.2 Clasificación</a></li><li><a class="dropdown-item" href="/Tema63">6.3 Funciones</a></li><li><a class="dropdown-item" href="/Tema64">6.4 Matrices de acceso</a></li><li><a class="dropdown-item" href="/Tema65">6.5 Protección basada en lenguaje</a></li><li><a class="dropdown-item" href="/Tema66">6.6 Validación y amenazas</a></li><li><a class="dropdown-item" href="/Tema67">6.7 Cifrado</a></li>
+            </ul>
+        </li>
+    </ul></div>
+</div></nav>
+
+<header class="hero"><div class="container">
+            <span style=" color:white;" class="fw-bold">
+                UNIDAD 3 · TEMA 6.3
+            </span>
+    <h1 class="display-4 fw-bold mt-2">Funciones del sistema de protección</h1>
+    <p class="fs-5 mt-3">Mecanismos que controlan el acceso de usuarios y programas a los recursos del sistema.</p>
+</div></header>
+
+<main class="container contenido">
+    <h2 class="mt-0">¿Qué hace un sistema de protección?</h2>
+    <p>El sistema de protección de un sistema operativo administra los permisos y establece límites para que los usuarios y procesos solamente puedan realizar las operaciones que tienen autorizadas. De esta manera, ayuda a evitar que un programa interfiera con otros o que un usuario modifique información que no le corresponde.</p>
+
+    <h2>Funciones principales</h2>
+    <div class="row g-3 mt-2">
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-person-badge icono"></i><h5>Identificación</h5><p>Permite reconocer qué usuario o proceso está solicitando utilizar un recurso.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-fingerprint icono"></i><h5>Autenticación</h5><p>Comprueba la identidad del usuario mediante contraseñas, códigos u otros métodos.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-person-check icono"></i><h5>Autorización</h5><p>Determina qué acciones puede realizar una persona después de identificarse.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-key icono"></i><h5>Control de acceso</h5><p>Permite o rechaza las solicitudes de acuerdo con los permisos establecidos.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-journal-text icono"></i><h5>Auditoría</h5><p>Registra actividades importantes para revisar quién utilizó un recurso y cuándo lo hizo.</p></div></div>
+        <div class="col-md-6"><div class="tarjeta"><i class="bi bi-boxes icono"></i><h5>Aislamiento</h5><p>Evita que los procesos interfieran indebidamente con otros procesos o con el sistema operativo.</p></div></div>
+    </div>
+
+    <h2>Proceso de control de acceso</h2>
+    <p>Cuando una persona intenta utilizar un archivo o programa, el sistema realiza una serie de comprobaciones antes de permitir la operación.</p>
+    <div class="row g-3 mt-2">
+        <div class="col-md-3"><div class="paso"><h5>01. Solicitud</h5><p class="mb-0">El usuario intenta abrir o modificar un recurso.</p></div></div>
+        <div class="col-md-3"><div class="paso"><h5>02. Identidad</h5><p class="mb-0">El sistema reconoce y verifica al usuario.</p></div></div>
+        <div class="col-md-3"><div class="paso"><h5>03. Permisos</h5><p class="mb-0">Se revisan los permisos asignados al usuario.</p></div></div>
+        <div class="col-md-3"><div class="paso"><h5>04. Resultado</h5><p class="mb-0">Se permite o se rechaza la operación.</p></div></div>
+    </div>
+
+    <h2>Ejemplo práctico</h2>
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" class="img-fluid rounded-4 mb-3" alt="Usuario trabajando en computadora">
+    <p>Cuando un estudiante inicia sesión en una computadora, el sistema verifica su cuenta. Después, le permite acceder a sus documentos y aplicaciones autorizadas. Si intenta instalar un programa y no cuenta con permisos de administrador, el sistema puede impedir esa acción.</p>
+
+    <div class="alert alert-primary mt-4">
+        Las funciones de protección trabajan en conjunto para mantener controlado el uso de los recursos y reducir los accesos indebidos.
+    </div>
+
+    <div class="d-flex justify-content-between mt-5">
+        <a href="/Tema62" class="btn btn-outline-primary">← Tema anterior</a>
+        <a href="/Tema64" class="btn btn-primary">Siguiente tema →</a>
+    </div>
+</main>
+<footer><div class="container text-center">
+    <p class="mb-1">Protección y Seguridad | Sistemas Operativos</p>
+    <p class="small mb-0">Referencias: Stallings, Sistemas operativos; Tanenbaum y Bos, Sistemas operativos modernos; NIST, <a href="https://csrc.nist.gov/" target="_blank">Computer Security Resource Center</a>.</p>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
